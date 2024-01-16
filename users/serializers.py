@@ -9,7 +9,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
     class Meta:
         """ Метаданные сериалайзера. """
         model = User
-        fields = ('email', 'login', 'telegram_id',)
+        fields = ('email', 'password', 'login', 'telegram_id',)
 
 
 class UserProfileSerializer(serializers.ModelSerializer):

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import os
-from datetime import timedelta, datetime
+from datetime import timedelta
 
 from celery.schedules import crontab
 from dotenv import load_dotenv
@@ -143,10 +143,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Host settings
-
-HOST = os.getenv('HOST', default='http://localhost:8000')
-
 # Users settings
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-user-model
 
@@ -158,6 +154,7 @@ AUTH_USER_MODEL = 'users.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',

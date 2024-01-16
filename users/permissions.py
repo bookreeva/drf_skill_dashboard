@@ -1,4 +1,3 @@
-from django.contrib.auth.models import AbstractUser
 from rest_framework.permissions import BasePermission
 
 
