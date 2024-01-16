@@ -1,12 +1,9 @@
-from datetime import datetime
-
 from django.utils import timezone
 from rest_framework import status
 from rest_framework.test import APITestCase
 from django.urls import reverse
 
 from habits.models import Habit
-from habits.services import send_tg_message
 from habits.tasks import send_daily_habit_messages
 from users.models import User
 
