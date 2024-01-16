@@ -1,4 +1,4 @@
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.viewsets import ModelViewSet
 
 from users.models import User
@@ -35,7 +35,7 @@ class UserViewSet(ModelViewSet):
     def get_permissions(self):
         """ Возвращает права в зависимости от статуса пользователя. """
         if self.action == 'create':
-            permission_classes = [IsAuthenticated]
+            permission_classes = [AllowAny]
         elif self.action == 'list':
             permission_classes = [IsSuperUser]
         else:
