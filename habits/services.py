@@ -5,18 +5,18 @@ from django.conf import settings
 
 class Place(models.TextChoices):
     """ Класс choices для поля 'place'. """
-    HOME = 'дома', 'дома'
-    KITCHEN = 'на кухне', 'на кухне'
-    PARKING = 'на парковке', 'на парковке'
-    POOL = 'в бассейне', 'в бассейне'
-    LIBRARY = 'в библиотеке', 'в библиотеке'
-    COFFEE_SHOP = 'в кофейне', 'в кофейне'
-    GARDEN = 'в саду', 'в саду'
-    PARK = 'в парке', 'в парке'
-    OFFICE = 'на работе', 'на работе'
-    WALK = 'на прогулке', 'на прогулке'
-    FITNESS_ROOM = 'в тренировочном зале', 'в тренировочном зале'
-    SHOP = 'в магазине', 'в магазине'
+    HOME = 'HOME', 'дома'
+    KITCHEN = 'KCHEN', 'на кухне'
+    PARKING = 'PING', 'на парковке'
+    POOL = 'POOL', 'в бассейне'
+    LIBRARY = 'LARY', 'в библиотеке'
+    COFFEE_SHOP = 'CHOP', 'в кофейне'
+    GARDEN = 'GDEN', 'в саду'
+    PARK = 'PARK', 'в парке'
+    OFFICE = 'OICE', 'на работе'
+    WALK = 'WALK', 'на прогулке'
+    FITNESS_ROOM = 'FOOM', 'в тренировочном зале'
+    SHOP = 'SHOP', 'в магазине'
 
 
 class Frequency(models.TextChoices):

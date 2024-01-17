@@ -23,7 +23,7 @@ def send_daily_habit_messages():
 
             text = f"""Напоминание о выполнении привычки: 
 {habit.action.title()}.
-Место: {habit.place}.
+Место: {habit.get_place_display()}.
 У вас есть: {habit.lead_time} секунд 💪"""
 
             if habit.reward:
@@ -55,7 +55,7 @@ def send_weekly_habit_messages():
 
                 text = f"""Напоминание о выполнении привычки: 
 {habit.action}.
-Место: {habit.place}.
+Место: {habit.get_place_display()}.
 У вас есть: {habit.lead_time} секунд 💪"""
 
                 if habit.reward:
