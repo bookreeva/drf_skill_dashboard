@@ -44,7 +44,6 @@ class Habit(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL,
                                 on_delete=models.CASCADE,
                                 verbose_name='Создатель привычки',
-                                default=1,
                                 **NULLABLE)
     is_published = models.BooleanField(default=False,
                                        verbose_name='Признак публичности')
