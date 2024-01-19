@@ -27,7 +27,8 @@ class HabitTestCase(APITestCase):
             is_published=True,
             frequency='ONE',
             reward='съесть печеньку',
-            on_time=timezone.now()
+            on_time=timezone.now(),
+            creator=self.user
         )
 
     def test_create_habit(self):
@@ -110,6 +111,30 @@ class HabitTestCase(APITestCase):
         self.assertEqual(
             response.status_code,
             status.HTTP_204_NO_CONTENT
+        )
+
+
+class MessageSendTestCase(APITestCase):
+    """ Класс тестирования модели привычки. """
+
+    def setUp(self) -> None:
+        """ Подготовка тестового окружения для тестирования. """
+
+        self.user = User.objects.create(
+            email='lola@join.com',
+            password='123qwe456rty',
+            telegram_id='1756385524'
+        )
+
+        self.client.force_authenticate(user=self.user)
+
+        self.habit = Habit.objects.create(
+            action='позвонить родителям',
+            is_published=True,
+            frequency='ONE',
+            reward='съесть печеньку',
+            on_time=timezone.now(),
+            creator=self.user
         )
 
     def test_send_daily_message(self):
