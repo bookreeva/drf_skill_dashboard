@@ -65,6 +65,16 @@ coverage report
 или запустить тест отдельно:
 python3 manage.py test <app_name>.tests.<test_class>.<def_test>
 
+11. Запуск с помощью DOCKER:
+- установить Docker
+
+- docker-compose build (собрать образ)
+- docker-compose up (запустить контейнеры) 
+ИЛИ
+- docker-compose up --build -d
+
+- control + C (остановить)
+
 
 ## Ошибки и улучшения
 
