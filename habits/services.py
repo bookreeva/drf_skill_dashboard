@@ -4,7 +4,7 @@ from django.conf import settings
 
 
 class Place(models.TextChoices):
-    """ Класс choices для поля 'place'. """
+    """Класс choices для поля 'place'."""
     HOME = 'HOME', 'дома'
     KITCHEN = 'KCHEN', 'на кухне'
     PARKING = 'PING', 'на парковке'
@@ -20,13 +20,13 @@ class Place(models.TextChoices):
 
 
 class Frequency(models.TextChoices):
-    """ Класс choices для поля 'frequency'. """
+    """Класс choices для поля 'frequency'."""
     DAILY = 'ONE', 'ежедневно'
     WEEKLY = 'WEEK', 'один раз в неделю'
 
 
 def send_tg_message(telegram_id, text):
-    """ Отправляет сообщение в телеграм по 'chat_id'. """
+    """Отправляет сообщение в телеграм по 'chat_id'."""
     url = settings.TELEGRAM_API_URL
     token = settings.TELEGRAM_API_TOKEN
 

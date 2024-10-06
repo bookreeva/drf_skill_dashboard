@@ -9,7 +9,7 @@ from habits.services import send_tg_message
 
 @shared_task
 def send_daily_habit_messages():
-    """ Отправляет сообщение в телеграм о привычке. """
+    """Отправляет сообщение в телеграм о привычке."""
     current_time = timezone.now()
 
     time_start_task = timezone.now() - timedelta(minutes=1)
@@ -40,7 +40,7 @@ def send_daily_habit_messages():
 
 @shared_task
 def send_weekly_habit_messages():
-    """ Отправляет сообщение в телеграм о привычке. """
+    """Отправляет сообщение в телеграм о привычке."""
     current_weekday = timezone.now().weekday()
     current_time = timezone.now()
     time_start_task = timezone.now() - timedelta(minutes=1)

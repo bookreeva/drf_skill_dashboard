@@ -8,7 +8,7 @@ from users.models import NULLABLE
 
 
 class Habit(models.Model):
-    """ Модель привычки. """
+    """Модель привычки."""
     action = models.CharField(max_length=70,
                               default='Пить воду',
                               verbose_name='Привычка')
@@ -49,10 +49,8 @@ class Habit(models.Model):
                                        verbose_name='Признак публичности')
 
     def clean(self):
-        """
-        Проверяет взаимоисключение полей
-        reward, enjoyable_habit, healthy_habit.
-        """
+        """Проверяет взаимоисключение полей
+        reward, enjoyable_habit, healthy_habit."""
         if self.reward and self.healthy_habit:
             raise ValidationError('Поля вознаграждения, полезной и приятной '
                                   'привычки не могут быть заполнены одновременно.')
